@@ -7,12 +7,14 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
+    <ScrollView android:id="@+id/ScrollView01"
+                android:layout_height="wrap_content"
+                android:layout_width="fill_parent">
     <LinearLayout
             android:orientation="vertical"
                   android:layout_width="match_parent"
                   android:layout_height="wrap_content">
 
-        <ScrollView android:id="@+id/ScrollView01" android:layout_height="wrap_content" android:layout_width="fill_parent">
             <LinearLayout android:layout_width="fill_parent" android:layout_height="wrap_content"
                           android:gravity="end"
                           android:orientation="horizontal">
@@ -20,9 +22,9 @@
                 <com.otaliastudios.cameraview.CameraView
                         xmlns:app="http://schemas.android.com/apk/res-auto"
                         android:id="@+id/cameraView"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="10"
+                        android:layout_width="fill_parent"
+                        android:layout_height="fill_parent"
+                        android:layout_weight="1"
                         android:layout_gravity="center"
                         android:keepScreenOn="true"
                         app:cameraExperimental="true"
@@ -38,19 +40,19 @@
                         app:cameraMode="picture" />
 
                 <ImageView android:id="@+id/resultImage"
-                           android:layout_width="wrap_content"
-                           android:layout_height="wrap_content"
+                           android:layout_width="fill_parent"
+                           android:layout_height="fill_parent"
                            android:layout_weight="1"
                            android:src="@mipmap/ic_launcher"/>
 
             </LinearLayout>
-        </ScrollView>
 
-        <Spinner
-                android:layout_width="match_parent"
-                android:layout_height="0dp" android:id="@+id/spinnerFunction" android:layout_weight="3"/>
-        <include layout="@layout/function_layout"/>
+            <Spinner
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp" android:id="@+id/spinnerFunction" android:layout_weight="3"/>
+            <include layout="@layout/function_layout"/>
 
-    </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
 
 </FrameLayout>

@@ -10,6 +10,8 @@ import android.os.AsyncTask
 import android.util.Size
 import android.view.LayoutInflater
 import android.view.View
+import android.view.Window
+import android.view.WindowManager
 import android.widget.AdapterView
 import kotlinx.android.synthetic.main.main_layout.*
 import kotlinx.android.synthetic.main.function_layout.*
@@ -37,6 +39,12 @@ class MainActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        requestWindowFeature(Window.FEATURE_NO_TITLE)
+        supportActionBar?.hide() // hide the title bar
+        window.setFlags(
+            WindowManager.LayoutParams.FLAG_FULLSCREEN,
+            WindowManager.LayoutParams.FLAG_FULLSCREEN) //enable full screen
+
         setContentView(R.layout.main_layout)
 
         // Initialize RS
